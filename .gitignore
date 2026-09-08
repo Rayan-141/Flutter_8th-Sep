@@ -1,0 +1,11 @@
+# Local credentials
+**/serviceAccountKey.json
+
+# macOS workspace metadata
+.DS_Store
+
+# Generated Flutter output in each project
+**/build/
+
+# Installed JavaScript dependencies
+**/node_modules/
