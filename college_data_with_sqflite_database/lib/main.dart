@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models/college_model.dart';
 
 void main() {
   runApp(MyApp());
