@@ -152,19 +152,15 @@ class SectionHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(18, 20, 18, 14),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, color: const Color(0xFF0D3B66), size: 30),
           const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              title,
-              softWrap: true,
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w800,
-                color: Color(0xFF0D3B66),
-              ),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+              color: Color(0xFF0D3B66),
             ),
           ),
         ],
@@ -205,24 +201,14 @@ class AssignmentOverviewSection extends StatelessWidget {
             style: TextStyle(fontSize: 18, color: Color(0xFF2A4568)),
           ),
           const SizedBox(height: 18),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              final crossAxisCount = constraints.maxWidth > 900
-                  ? 5
-                  : constraints.maxWidth > 600
-                      ? 3
-                      : 2;
-
-              return GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: crossAxisCount,
-                mainAxisSpacing: 18,
-                crossAxisSpacing: 18,
-                childAspectRatio: 1.08,
-                physics: const NeverScrollableScrollPhysics(),
-                children: cards,
-              );
-            },
+          GridView.count(
+            shrinkWrap: true,
+            crossAxisCount: 5,
+            mainAxisSpacing: 18,
+            crossAxisSpacing: 18,
+            childAspectRatio: 1.08,
+            physics: const NeverScrollableScrollPhysics(),
+            children: cards,
           ),
           const SizedBox(height: 16),
           Container(
